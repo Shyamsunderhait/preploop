@@ -1,0 +1,14 @@
+services:
+  db:
+    image: postgres:16
+    container_name: preploop-db
+    environment:
+      POSTGRES_DB: preploop
+      POSTGRES_USER: preploop
+      POSTGRES_PASSWORD: preploop
+    ports:
+      - "5432:5432"
+    volumes:
+      - preploop-data:/var/lib/postgresql/data
+volumes:
+  preploop-data:
